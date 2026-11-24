@@ -98,8 +98,8 @@ class LaunchSettingsFormDialog(
         setOKButtonText("保存")
         setCancelButtonText("取消")
 
-        exePathField.addBrowseFolderListener(dialogProject, FileChooserDescriptorFactory.createSingleFileDescriptor())
-        workDirField.addBrowseFolderListener(dialogProject, FileChooserDescriptorFactory.createSingleFolderDescriptor())
+        exePathField.addBrowseFolderListener(dialogProject, FileChooserDescriptorFactory.singleFile())
+        workDirField.addBrowseFolderListener(dialogProject, FileChooserDescriptorFactory.singleDir())
 
         launchBrowserCheck.addActionListener { launchUrlField.isEnabled = launchBrowserCheck.isSelected }
 
@@ -185,7 +185,7 @@ class LaunchSettingsFormDialog(
     private fun setBrowseFieldEnabled(f: TextFieldWithBrowseButton, enabled: Boolean) {
         f.isEnabled = enabled
         f.childComponent.isEnabled = enabled
-        f.button.isEnabled = enabled
+        f.setButtonEnabled(enabled)
     }
 
     private fun saveCurrentToModel() {

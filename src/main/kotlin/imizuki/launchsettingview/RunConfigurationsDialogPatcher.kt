@@ -65,13 +65,15 @@ class RunConfigurationsDialogPatcher {
         val disposable: Disposable = Disposer.newDisposable("LaunchSettingsDialogPatcher")
         Disposer.register(ApplicationManager.getApplication(), disposable)
         IdeEventQueue.getInstance().addDispatcher(
-            IdeEventQueue.EventDispatcher { e ->
-                try {
-                    handleEvent(e)
-                } catch (t: Throwable) {
-                    log.error("launchSettings patcher dispatcher failed", t)
+            object : IdeEventQueue.NonLockedEventDispatcher {
+                override fun dispatch(e: AWTEvent): Boolean {
+                    try {
+                        handleEvent(e)
+                    } catch (t: Throwable) {
+                        log.error("launchSettings patcher dispatcher failed", t)
+                    }
+                    return false // 永不消费事件
                 }
-                false // 永不消费事件
             },
             disposable
         )

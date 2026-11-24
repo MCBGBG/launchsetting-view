@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettings
+package dev.mcbg.rider.launchsettingview
 
 import tools.jackson.core.PrettyPrinter
 import tools.jackson.core.json.JsonReadFeature

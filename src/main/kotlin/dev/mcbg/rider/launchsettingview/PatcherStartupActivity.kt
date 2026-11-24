@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettings
+package dev.mcbg.rider.launchsettingview
 
 import com.intellij.execution.RunManager
 import com.intellij.execution.configurations.ConfigurationTypeUtil

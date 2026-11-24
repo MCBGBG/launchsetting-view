@@ -1,1 +1,1 @@
-rootProject.name = "rider_launch_setting_config"
+rootProject.name = "launchsetting-view"

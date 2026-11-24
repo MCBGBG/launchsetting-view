@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettings
+package dev.mcbg.rider.launchsettingview
 
 import com.intellij.execution.configurations.RunConfiguration
 import com.intellij.execution.impl.ConfigurationSettingsEditorWrapper
@@ -294,6 +294,6 @@ class LaunchSettingsPanel(val original: JComponent) : JBPanel<LaunchSettingsPane
     companion object {
         /** LaunchSettingsConfigurationType.RUN_CONFIG_ID（不直接引用该类，避免类路径问题） */
         private const val LAUNCH_SETTINGS_TYPE_ID = "LaunchSettings"
-        private const val HOOK_KEY = "dev.mcbg.rider.launchsettings.linkHooked"
+        private const val HOOK_KEY = "dev.mcbg.rider.launchsettingview.linkHooked"
     }
 }

@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettings
+package dev.mcbg.rider.launchsettingview
 
 import com.intellij.execution.impl.ConfigurationSettingsEditorWrapper
 import com.intellij.ide.IdeEventQueue
@@ -189,7 +189,7 @@ class RunConfigurationsDialogPatcher {
     companion object {
         private const val RETRY_COUNT = 10
         private const val RETRY_DELAY_MS = 200
-        private const val LISTENER_INSTALLED = "dev.mcbg.rider.launchsettings.listenerInstalled"
+        private const val LISTENER_INSTALLED = "dev.mcbg.rider.launchsettingview.listenerInstalled"
 
         private val REGIONS = listOf(
             BorderLayout.CENTER, BorderLayout.NORTH, BorderLayout.SOUTH,

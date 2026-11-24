@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>dev.mcbg.rider.launchsettings</id>
-    <name>Launch Settings Editor</name>
+    <id>dev.mcbg.rider.launchsettingview</id>
+    <name>LaunchSetting View</name>
     <vendor url="https://github.com/mcbg">mcbg</vendor>
     <description><![CDATA[
     <p>Structural editor for <code>Properties/launchSettings.json</code> in JetBrains Rider.</p>
@@ -43,6 +43,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- RunConfigurationsDialogPatcher 以 @Service(APP) 轻量服务注册，无需在此声明 -->
         <postStartupActivity
-            implementation="dev.mcbg.rider.launchsettings.PatcherStartupActivity"/>
+            implementation="dev.mcbg.rider.launchsettingview.PatcherStartupActivity"/>
     </extensions>
 </idea-plugin>

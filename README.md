@@ -1,4 +1,4 @@
-# Launch Settings Editor for JetBrains Rider
+# LaunchSetting View — launchSettings.json editor for JetBrains Rider
 
 A Rider plugin that turns the raw `Properties/launchSettings.json` editing experience into a structured form.
 

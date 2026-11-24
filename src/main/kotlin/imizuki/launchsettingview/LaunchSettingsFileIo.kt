@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettingview
+package imizuki.launchsettingview
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.fileEditor.FileDocumentManager

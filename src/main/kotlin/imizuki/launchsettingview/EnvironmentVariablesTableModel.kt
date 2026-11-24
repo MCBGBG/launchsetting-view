@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettingview
+package imizuki.launchsettingview
 
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.ui.table.JBTable

@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettingview
+package imizuki.launchsettingview
 
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory

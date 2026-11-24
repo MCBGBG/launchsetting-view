@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>dev.mcbg.rider.launchsettingview</id>
+    <id>imizuki.launchsettingview</id>
     <name>LaunchSetting View</name>
     <vendor url="https://github.com/MCBGBG/launchsetting-view">MCBGBG</vendor>
     <description><![CDATA[
@@ -43,6 +43,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- RunConfigurationsDialogPatcher 以 @Service(APP) 轻量服务注册，无需在此声明 -->
         <postStartupActivity
-            implementation="dev.mcbg.rider.launchsettingview.PatcherStartupActivity"/>
+            implementation="imizuki.launchsettingview.PatcherStartupActivity"/>
     </extensions>
 </idea-plugin>

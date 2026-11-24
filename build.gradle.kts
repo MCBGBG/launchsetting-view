@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.intellij.platform") version "2.20.1"
 }
 
-group = "dev.mcbg"
+group = "imizuki"
 version = "0.1.0"
 
 // JVM 目标由 IntelliJ Platform Gradle Plugin 按平台统一设置（263 → 25）。

@@ -1,4 +1,4 @@
-package dev.mcbg.rider.launchsettingview
+package imizuki.launchsettingview
 
 import com.intellij.json.JsonFileType
 import com.intellij.openapi.project.Project

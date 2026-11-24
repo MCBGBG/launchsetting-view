@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>dev.mcbg.rider.launchsettings</id>
+    <name>Launch Settings Editor</name>
+    <vendor url="https://github.com/mcbg">mcbg</vendor>
+    <description><![CDATA[
+    <p>Structural editor for <code>Properties/launchSettings.json</code> in JetBrains Rider.</p>
+    <p>When a <b>.NET Launch Settings Profile</b> run configuration is selected in the
+    <em>Run/Debug Configurations</em> dialog, the built-in <em>"open in editor"</em> link
+    in the "Profile parameters are set by …" hint is redirected to a form-based editor instead
+    of opening the raw file. If the file does not exist yet, a <b>Create launchSettings.json</b>
+    button appears next to the <em>Launch profile</em> selector.</p>
+    <h3>Features</h3>
+    <ul>
+      <li><b>Profile list</b> on the left with +/− add/remove, mirroring the run configuration tree.</li>
+      <li><b>Form on the right</b>: name, command (Project / Executable / IISExpress), command line
+          arguments, executable path, working directory, application URL, launch browser + launch URL,
+          native debugging. Fields that are irrelevant for the selected command are disabled.</li>
+      <li><b>Environment variables</b> edited in a table with <em>common variable</em> suggestions
+          (<code>ASPNETCORE_ENVIRONMENT</code>, <code>DOTNET_ENVIRONMENT</code>, <code>Logging__LogLevel__Default</code>, …)
+          and matching value pickers; everything stays freely typeable.</li>
+      <li><b>Lossless round-trip</b>: only known fields are touched — <code>$schema</code>,
+          <code>dotnetRunMessages</code> and any other custom keys are preserved.</li>
+      <li><b>"Edit as JSON text…"</b> escape hatch for anything the form does not cover.</li>
+      <li>Writes go through the IntelliJ VFS so Rider picks up the change immediately.</li>
+    </ul>
+    <p>Compatible with Rider 2026.3.</p>
+    ]]></description>
+    <change-notes><![CDATA[
+    <b>0.1.0</b>
+    <ul>
+      <li>Initial release: form-based launchSettings.json editor reachable from the
+          run configuration dialog's "open in editor" link.</li>
+      <li>Fallback create button when the file is missing.</li>
+      <li>Environment-variable table with common-variable and value suggestions.</li>
+      <li>JSON text editing as an escape hatch.</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.rider</depends>
+    <depends>com.intellij.modules.json</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- RunConfigurationsDialogPatcher 以 @Service(APP) 轻量服务注册，无需在此声明 -->
+        <postStartupActivity
+            implementation="dev.mcbg.rider.launchsettings.PatcherStartupActivity"/>
+    </extensions>
+</idea-plugin>
